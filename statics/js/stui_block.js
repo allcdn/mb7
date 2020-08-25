@@ -287,10 +287,7 @@ var stui = {
 	}	
 };
 
-if(window.console&&window.console.log){  
-	console.log("主题名称：木瓜电影网");  
-	console.log("主题官网：https://www.mgl6.com");  
-}
+
 
 $(document).ready(function() {	
 	if(stui.browser.useragent.mobile){
