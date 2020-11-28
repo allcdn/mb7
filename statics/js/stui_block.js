@@ -247,9 +247,12 @@ var stui = {
 			if(copyshort==1){
 				if($(".copylink").length){
 					$.ajax({ 
-						type : 'GET',  
-				        url : '//api.uomg.com/api/long2dwz?dwzapi=suoim&url='+encodeURIComponent(stui.browser.url),
-				        dataType : 'JSON',   
+						type : 'post',  
+						url: 'https://www.gourls.net/dwz.php',
+						dataType: 'JSON',
+						data: {
+							longurl:stui.browser.url
+						},  
 				        success : function(r) {
 				        	url_short = "全网vip高清影视院线大片等，免费在线观看："+r.ae_url;	
 				        	var clipboard = new Clipboard('.copylink', {
@@ -265,7 +268,7 @@ var stui = {
 				}
 			} else {
 				if($(".copylink").length){
-					var url_short = "全网vip高清影视院线大片等，免费在线观看："+stui.browser.url;	
+					url_short = "全网vip高清影视院线大片等，免费在线观看："+stui.browser.url;	
 					var clipboard = new Clipboard('.copylink', {
 						text: function() {									
 							return url_short;
